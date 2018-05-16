@@ -72,7 +72,7 @@
       "Gary Oldman"
     ]
   }, {
-  {
+  
     id: 5,
     title: "Schindler's List",
     poster: "https://i.imgur.com/IWZJOmu.jpg",
