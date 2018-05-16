@@ -23,7 +23,7 @@ export class MovieService {
         "Clancy Brown",
         "Gil Bellows"
       ],
-      // hours: 22:00,
+      // hours: 22:00- add hours to all films ,
       room:1,
     }, {
       id: 2,
@@ -116,6 +116,7 @@ export class MovieService {
   }
   getMovie(id: number): Object {
       return _.findWhere(this.movies, { id: id });
+
 
   }
 
