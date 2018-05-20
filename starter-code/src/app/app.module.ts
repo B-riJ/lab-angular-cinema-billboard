@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
  // added routes
-// import { MovieService } from './movie.service';
+import { MovieService } from './services/movie.service'; // fix this
 import { AppComponent } from './app.component';
 import { MyHomeComponent } from './my-home/my-home.component';
 import { MyMovieComponent } from './my-movie/my-movie.component';
 import { RouterModule, Routes } from "@angular/router";
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: MyHomeComponent },
-  { path: 'movie/:id', component: MyMovieComponent }
+  { path: 'movies/:id', component: MyMovieComponent }
 ];
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  //added MovieSercie
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

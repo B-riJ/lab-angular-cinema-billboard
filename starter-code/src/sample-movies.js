@@ -1,3 +1,4 @@
+// alternative method (review): create: const array<object>
 [
   {
     id: 1,

@@ -1,3 +1,13 @@
 <p>
   my-home works!
 </p>
+ <!-- dynamic router link, give it an array (router link)-->
+<div *ngFor ="let movie of allTheMovies">
+  <a [routerLink]= "['/movies', movie.id]"><h2>{{movie.title}}</h2></a>
+  
+  <h3>Directed by: {{movie.director}}</h3>
+  <p>{{movie.synopsis}}</p>
+  <img [src]="movie.poster" [alt]="movie.title" (click)="goToMoviePage(movie.id)"> 
+  
+</div>
+<!-- added on click function to movie.poster -->

@@ -1,4 +1,19 @@
 <p>
   my-movie works!
 </p>
+<h1>{{theMovie.title}}</h1>
+<h2>{{theMovie.director}}</h2>
+<p>{{theMovie.year}}</p>
+<p>{{theMovie.synopsis}}</p>
+
+<h3>Cast</h3>
+<ul>
+  <li *ngFor="let actor of theMovie.actors">
+    {{actor}}
+
+  </li>
+</ul>
+<img [src]="theMovie.poster" [alt]="theMovie.title">
+
 <!-- movie route : /movie/(idhere) -->
+<!-- placing in [] allows the link to be dynmaic, refresh on its own -->

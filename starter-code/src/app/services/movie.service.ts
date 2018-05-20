@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'underscore';
+//import movies- import{MviesArray} from'../../sample-movies'
+
 
 @Injectable()
 export class MovieService {
 
-  movies:Array<Object> = [
+  moviesList:Array<any> = [
     {
       id: 1,
       title: "The Shawshank Redemption",
@@ -111,14 +113,20 @@ export class MovieService {
   
 
   constructor() { }
-  getMovies():Array<Object> {
-    return this.movies;
+  getMovies() {
+    return this.moviesList;
+    //this.name of Array. moviesList in ex.
   }
-  getMovie(id: number): Object {
-      return _.findWhere(this.movies, { id: id });
+  // getMovie(id: number): Object {
+  //     return _.findWhere(this.movies, { id: id });
 
 
+  // }
+  //return to this to clear errors
+getMovie(theId){
+    const theMovie = this.moviesList.find((oneMovie)=>{
+  return oneMovie.id === theId;
+  });
+  return theMovie;
   }
-
-
 }
